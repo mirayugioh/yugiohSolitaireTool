@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="jp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ブラウザ・バック防止</title>
+</head>
+
+<body>
+コンテンツです。
+<script>
+//ブラウザの戻るボタンと再読み込みボタンを無効化
+window.history.pushState(null, null, null); //画面初期表示時に遷移先nullの履歴を追加する
+window.addEventListener('popstate', () => {
+  window.history.pushState(null, null, null);
+  alert('誤操作防止のため、戻る機能は無効化されています。閉じるボタン等をご使用ください。');
+  return;
+});
+window.addEventListener('beforeunload', function (e) {
+  // カスタムメッセージは設定できませんが、イベントをキャンセルすることで確認ダイアログを表示できます
+  e.preventDefault();
+  // Chrome では e.returnValue に空文字を設定する必要があります
+  e.returnValue = '';
+});
+</script>
+</body>
+</html>
