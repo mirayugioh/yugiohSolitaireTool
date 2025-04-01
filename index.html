@@ -68,16 +68,18 @@ button {
   /*background-color: red;*/
   /*margin: 1em;*/
 }
-#tempCommentBox {
+.commentBox {
   font-family: reisho;
   height: 4rem;
   width: 98%;
+  background-color: #F4FDFF;
+  opacity: 0.75;
+  resize: none;
+}
+#tempCommentBox {
   margin-bottom: 0.1em;
 }
 #foreverCommentBox {
-  font-family: reisho;
-  height: 4rem;
-  width: 98%;
   text-decoration: underline;
   text-decoration-color: #ca3b3a;
 }
@@ -144,20 +146,20 @@ button {
   width: calc(100% / 7);
 }
 #logBox { 
+  background-color: #0d0d0d; /* 濃い黒 */
+  color: white;
   width: calc(100% / 7 * 4); 
   aspect-ratio: 5 / 1;
   max-height: 100%;
   font-size: 0.5em;
-  background-color: black; 
-  color: white; 
-  padding: 0.3em;
+  padding: 0.2em;
   overflow-x: auto;
   overflow-y: auto;
   white-space: pre-wrap; 
   word-break: break-word;
 }
-.json-key { color: #c13; } 
-.json-string { color: #98c379; } 
+/*.json-key { color: #c13; } */
+/*.json-string { color: #98c379; } */
 .json-number { color: #d19a66; } /* オレンジ */
 .json-boolean { color: #56b6c2; } /* 青 */
 .json-null { color: #c678dd; } /* 紫 */
@@ -249,7 +251,6 @@ button {
     transform: translateX(0);
   }
 }
-
 .isBackSide {
   /*opacity: 0.8;*/
   /*目印用のクラス*/
@@ -342,9 +343,9 @@ button {
 .tempCard {}
 .dialogBox {
   position: fixed;
-  top: 50%;
+  top: 25%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -25%);
   width: 80%;
   height: fit-content;
   background-color: black;
@@ -354,7 +355,7 @@ button {
 }
 .infoBox {
   width: 90%;
-  max-height: 80vh;
+  max-height: 55vh;
   margin: 1em;
   gap: 1em;
   display: flex;
@@ -461,9 +462,9 @@ button {
   <div class="container">
     <div id='commentBoard'>
       <!--一時コメントボード-->
-      <textarea id='tempCommentBox'></textarea>
+      <textarea id='tempCommentBox' class='commentBox'></textarea>
       <!--永続コメントボード-->
-      <textarea id='foreverCommentBox'></textarea>
+      <textarea id='foreverCommentBox' class='commentBox'></textarea>
     </div>
   </div>
   <!--アクションボタンコンテナ-->
@@ -481,7 +482,8 @@ button {
   </div>
   <div class="container">
     <div id='subButtonBoard'>
-      <div id='logBox'></div>
+      <!--<div id='logBox'></div>-->
+      <textarea id='logBox'></textarea>
       <button id='undoButton'>一手戻す</button>
       <button id='replayButton'>リプレイ</button>
       <button id='changeZoneBackgroundButton'>背景変更</button>
@@ -509,10 +511,24 @@ button {
   <!--    <iframe id='iframeElement'></iframe>-->
   <!--  </div>-->
   <!--</div>-->
+
 <script>
 //APIキー
-const apiKey = 'AbCdEfGhIjKlMnOpQrs_TyUvWxYz'; // ★ここにAPIキーを設定する
-const searchEngineId = '123ab45def67ghijk89lm'; // ★検索エンジンIDを設定
+const apiKey = 'AbCdEfGhIjKLmOPqrSTUvWXyz'; // ★APIキーを設定する
+const searchEngineId = '123ad4567defgh89'; // ★検索エンジンIDを設定
+//ブラウザの戻るボタンと再読み込みボタンを無効化
+window.history.pushState(null, null, null); //画面初期表示時に遷移先nullの履歴を追加する
+window.addEventListener('popstate', () => {
+  window.history.pushState(null, null, null);
+  alert('誤操作防止のため、戻る機能は無効化されています。閉じるボタン等をご使用ください。');
+  return;
+});
+window.addEventListener('beforeunload', function (e) {
+  // カスタムメッセージは設定できませんが、イベントをキャンセルすることで確認ダイアログを表示できます
+  e.preventDefault();
+  // Chrome では e.returnValue に空文字を設定する必要があります
+  e.returnValue = '';
+});
 //グローバル変数や関数を定義
 let maxZIndex = 0;
 const getNewZIndex = () => {
@@ -1040,14 +1056,15 @@ const showOverLappingCardsList = (overlappingCards) => {
       tempCard.src = tempCard.dataset.faceUpSrc;
     }
     tempCard.src = overlappingCard.src;
+    tempCard.dataset.cardName = overlappingCard.dataset.cardName;
     tempCard.dataset.uniqueId = overlappingCard.id;
     tempCard.addEventListener('click', () => {
-      // revealFrontSide(tempCard);
+      //displayIframe(tempCard.dataset.cardName);
       //console.log(`選択したカード: ${tempCard.dataset.uniqueId}`);
       resetClickedCard();
       const selectedTempCard = Array.from(document.querySelectorAll('.card')).find(card => card.id === tempCard.dataset.uniqueId);
       selectedTempCard.classList.add('clickedCard');
-      selectedTempCard.style.zIndex = getNewZIndex();
+      // selectedTempCard.style.zIndex = getNewZIndex(); //これを有効にすると選んだカードが一番上に来る。けどエクシーズ素材を取り除きたいなー→クリックした→やっぱ辞めるみたいな場面は普通にあるから没
       document.querySelector('.dialogBox').remove();
     });
     infoBox.appendChild(tempCard);
@@ -1129,44 +1146,43 @@ const typeOrder = {
   //otherその他。他の種類も追加可能
 };
 const insertIntoBestPosition = (card) => {
-  //console.log(`テーマ名${card.dataset.themeName}、名前${card.dataset.cardName}、種類${card.dataset.cardType}、カードID${card.id}のカードを適切な位置に挿入します。`)
-  //対象のカードと同じテーマ名のカードがあるか判定
-  const sameThemeElement = cardBoard.querySelector(`[data-theme-name='${card.dataset.themeName}']`);
-  if (!sameThemeElement) {
+  //console.log(`🥺テーマ名${card.dataset.themeName}、名前${card.dataset.cardName}、種類${card.dataset.cardType}、カードID${card.id}のカードを適切な位置に挿入します。`)
+  const sameThemeElements = cardBoard.querySelectorAll(`[data-theme-name='${card.dataset.themeName}']`);
+  if (sameThemeElements.length === 0) {
     cardBoard.appendChild(card);
     //console.log('同じテーマ名のカードがなかったため普通に一番末尾に挿入しました');
-  } else {
-    //対象カードと同じ種類（efやxy）が既にあるか判定
-    const sameThemeSameTypeElement = sameThemeElement.querySelector(`[data-card-type='${card.dataset.cardType}']`);
-    if (sameThemeSameTypeElement) {
-      cardBoard.insertBefore(card, sameThemeSameTypeElement);
-      //console.log('同じ種類のカードがあったためその先頭に追加しました');
-    } else {
-      //対象のカードの次の種類のカードがあるか判定
-      const typeKeys = Object.keys(typeOrder);
-      if (!typeOrder.hasOwnProperty(card.dataset.cardType)) {
-        console.warn(`未定義のカードタイプ: ${card.dataset.cardType}`);
-        return;
-      }
-      const currentIndex = typeKeys.indexOf(card.dataset.cardType);
-      //const cardElements = cardBoard.querySelectorAll('.card');
-      const sameThemeElements = cardBoard.querySelectorAll(`[data-theme-name='${card.dataset.themeName}']`);
-      const nextTypeElements = Array.from(sameThemeElements).filter(el => typeOrder[el.dataset.cardType] > currentIndex);
-      if (nextTypeElements.length <= 0) {
-        cardBoard.appendChild(card);
-        //console.log('次の種類のカードがなかったため一番末尾に置きました');
-      } else {
-        let theSmallestTypeElement = nextTypeElements[0];
-        for (let i = 1; i < nextTypeElements.length; i++) {
-          if (typeOrder[nextTypeElements[i].dataset.cardType] < typeOrder[theSmallestTypeElement.dataset.cardType]) {
-            theSmallestTypeElement = nextTypeElements[i];
-          }
-        }
-        cardBoard.insertBefore(card, theSmallestTypeElement);
-        //console.log('次の種類のカードがあったためその直前に置きました');
-      }
-    }
+    return;
   }
+  const sameThemeSameImageUrlElement = Array.from(sameThemeElements).find(el => el.dataset.faceUpSrc === card.dataset.faceUpSrc);
+  if (sameThemeSameImageUrlElement) {
+    cardBoard.insertBefore(card, sameThemeSameImageUrlElement);
+    //console.log('対象カードと同じテーマで同じ画像URLの要素が既にあったため、その直前に追加しました');
+    return;
+  } 
+  const sameThemeSameTypeElement = Array.from(sameThemeElements).find(el => el.dataset.cardType === card.dataset.cardType);
+  if (sameThemeSameTypeElement) {
+    cardBoard.insertBefore(card, sameThemeSameTypeElement);
+    //console.log('同じ種類のカードがあったためその直前に追加しました');
+    return;
+  } 
+  const typeKeys = Object.keys(typeOrder);
+  if (!typeOrder.hasOwnProperty(card.dataset.cardType)) {
+    cardBoard.appendChild(card);
+    //console.warn(`未定義のカードタイプ: ${card.dataset.cardType}`);
+    return;
+  }
+  const currentIndex = typeKeys.indexOf(card.dataset.cardType);
+  const nextTypeElements = Array.from(sameThemeElements).filter(el => typeOrder[el.dataset.cardType] > currentIndex);
+  if (nextTypeElements.length >= 1) {
+    const theSmallestTypeElement = nextTypeElements.sort(
+      (a, b) => typeOrder[a.dataset.cardType] - typeOrder[b.dataset.cardType]
+    )[0];
+    cardBoard.insertBefore(card, theSmallestTypeElement);
+    //console.log('次の種類のカードがあったためその直前に置きました');
+    return;
+  } 
+  cardBoard.appendChild(card);
+  //console.log('次の種類のカードがなかったため一番末尾に置きました');
 }
 const cropAndResize = (image) => {
   const beforeWidth = image.width;
@@ -1261,7 +1277,8 @@ const createThemeCards = (nameOfTheme, urlOfFavoriteCardImage, cardDataSets) => 
 } 
 //テーマカード生成
 //テンプレート
-//typeはtypeOrder関数で定義しています。noと書くと通常モンスターとして整列されます。efが効果、riが儀式、peがペンデュラム、fuが融合、syがシンクロ、xyがエクシーズ、liがリンク、spが魔法、trが罠、toはトークン、otはその他です。
+//typeはtypeOrder関数で定義しています。noと書くと通常モンスターとして整列されます。efが効果、riが儀式、
+//peがペンデュラム、fuが融合、syがシンクロ、xyがエクシーズ、liがリンク、spが魔法、trが罠、toはトークン、otはその他です。
 // createThemeCards(
 //   'sample', //テーマの名前
 //   'https://sample.com/sample.jpg', //代表カードの画像URL
@@ -1295,14 +1312,13 @@ createThemeCards(
     ,{type: 'ef', name: 'マグナムート', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/handTrap/マグナムート.jpg'}
     ,{type: 'ef', name: 'DDクロウ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/handTrap/DDクロウ.jpg'}
     ,{type: 'ef', name: 'ドロール', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/handTrap/ドロール.jpg'}
-    ,{type: 'ef', name: 'アトラクター', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/handTrap/アトラクター.jpg'}
     ,{type: 'ef', name: 'フワロス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/handTrap/フワロス.jpg'}
     ,{type: 'ef', name: 'プルリア', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/handTrap/プルリア.jpg'}
     ,{type: 'ef', name: 'ニャルス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/handTrap/ニャルス.jpg'}
     ,{type: 'ef', name: 'ロンギヌス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/handTrap/ロンギヌス.jpg'}
     ,{type: 'tr', name: '波動', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/handTrap/波動.jpg'}
     ,{type: 'tr', name: '粉砕', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/handTrap/粉砕.jpg'}
-    ,{type: 'tr', name: 'しぐれ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/handTrap/しぐれ.jpg'}
+    ,{type: 'ef', name: 'しぐれ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/handTrap/しぐれ.jpg'}
   ]
 );
 //汎用カード（メインデッキに入るやつ）
@@ -1338,7 +1354,6 @@ createThemeCards(
     ,{type: 'li', name: 'スカルデット', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/popularExtra/スカルデット.jpg'}
     ,{type: 'li', name: 'ジーランティス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/popularExtra/ジーランティス.jpg'}
     ,{type: 'sy', name: 'ブレイバー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/popularExtra/ブレイバー.jpg'}
-    ,{type: 'li', name: 'アポロウーサ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/popularExtra/アポロウーサ.jpg'}
     ,{type: 'li', name: 'アンブロエール', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/popularExtra/アンブロエール.jpg'}
     ,{type: 'li', name: 'プロキシー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/popularExtra/プロキシー.jpg'}
     ,{type: 'xy', name: 'キングレムリン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/popularExtra/キングレムリン.jpg'}
@@ -1365,6 +1380,8 @@ createThemeCards(
     ,{type: 'xy', name: 'プトレマイオス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/popularExtra/プトレマイオス.jpg'}
     ,{type: 'li', name: 'アニマ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/popularExtra/アニマ.jpg'}
     ,{type: 'li', name: 'アウローラドン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/popularExtra/アウローラドン.jpg'}
+    ,{type: 'li', name:'クロシープ', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUAX6BrKC3fIeSANoPI8qfjIao5Vamayd4jQck6NIDPY3ty6Ey6ZXFcrC-&s=10'}
+    ,{type: 'li', name:'ケルビーニ', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSig99SzvQCHUeY9Nrc9MdWkEas5ul8aeNktvfOd4DEZo56gpIeexJukso&s=10'}
   ]
 );
 //宝玉獣
@@ -1438,7 +1455,9 @@ createThemeCards(
     ,{type: 'ef', name: 'オジエ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/infernoble/オジエ.jpg'}
     ,{type: 'sp', name: '聖杯の継承', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/infernoble/聖杯の継承.jpg'}
     ,{type: 'ef', name: 'ブラダマンテ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/infernoble/ブラダマンテ.jpg'}
-    ,{type: 'xy', name: '神聖騎士王アルトリウス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/infernoble/神聖騎士王アルトリウス.jpg'}
+    ,{type: 'xy', name: '聖騎士王アルトリウス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/infernoble/神聖騎士王アルトリウス.jpg'}
+    ,{type: 'xy', name:'神聖騎士王アルトリウス', url: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR3dXdkiroGAp3Bn6Qo4-aHbIr7Qbp2_yuIEf1LSm6iClL8DQc1kYjt0L6KOE30Z-IZiwwnkXfsV-oTdHwBMhfp07oMmCe16A'}
+    ,{type: 'xy', name:'コルネウス', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTUTlUYEQ4dpS0U05agFsTmosq5d1LsboJPZenhZnLKHNPU3LR2PhH6xul&s=10'}
     ,{type: 'ef', name: 'モージ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/infernoble/モージ.jpg'}
     ,{type: 'sp', name: 'メタルシルバー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/infernoble/メタルシルバー.jpg'}
     ,{type: 'sp', name: 'ギアブレード', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/infernoble/ギアブレード.jpg'}
@@ -1718,7 +1737,6 @@ createThemeCards(
     ,{type:'sp',name: '辻風', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/vs/辻風.jpg'}
     ,{type:'tr',name: '龍帝ノ槍', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/vs/龍帝ノ槍.jpg'}
     ,{type:'ef',name: 'ジャオロン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/vs/ジャオロン.jpg'}
-    ,{type:'ef',name: 'ヴァリウス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/vs/ヴァリウス.jpg'}
     ,{type:'tr',name: 'トリニティバースト', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/vs/トリニティバースト.jpg'}
     ,{type:'tr',name: '裏螺旋', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/vs/裏螺旋.jpg'}
   ]
@@ -2558,7 +2576,7 @@ createThemeCards(
     ,{type:'ef',name: 'ガイアブースター', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/ガイアブースター.jpg'}
     ,{type:'ef',name: 'タマC', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/タマC.jpg'}
     ,{type:'ef',name: 'コブC', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/コブC.jpg'}
-    ,{type:'ef',name: 'ビッグベン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/ビッグベンK.jpg'}
+    ,{type:'ef',name: 'ビッグベン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/ビッグベン.jpg'}
     ,{type:'ef',name: 'マカルガエシ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/マカルガエシ.jpg'}
     ,{type:'ef',name: 'ダイ8', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/ダイ8.jpg'}
     ,{type:'ef',name: 'ビッグワラG', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/ビッグワラG.jpg'}
@@ -2592,7 +2610,7 @@ async function fetchData() {
       const apiSearchElement = document.createElement('img');
       const allApiGeneratedCards = document.querySelectorAll('.apiGenerated');
       apiSearchElement.id = `api${allApiGeneratedCards.length + 1}`;
-      apiSearchElement.classList.add('card', 'apiGenerated');
+      apiSearchElement.classList.add('card');
       const someZone = document.querySelector('.zone');
       const someZoneHeight = window.getComputedStyle(someZone).height;
       apiSearchElement.height = parseInt(someZoneHeight) * 0.95;
@@ -2604,10 +2622,13 @@ async function fetchData() {
       searchResultCardBoard.appendChild(apiSearchElement);
       apiSearchElement.addEventListener('click', (event) => {
         const selectedApiSearchElement = event.target; // クリックされた画像要素を取得
-        selectedApiSearchElement.classList.add('onCardBoard');
-        cardBoard.insertBefore(selectedApiSearchElement, cardBoard.children[0]);
-        selectedApiSearchElement.addEventListener('click', handleCardClick);
-        searchResultCardBoard.remove();
+        if (!selectedApiSearchElement.classList.contains('onCardBoard')) {
+          selectedApiSearchElement.classList.add('onCardBoard');
+          selectedApiSearchElement.classList.add('apiGenerated');
+          cardBoard.insertBefore(selectedApiSearchElement, cardBoard.children[0]);
+          selectedApiSearchElement.addEventListener('click', handleCardClick);
+          searchResultCardBoard.remove();
+        }
       });
     }
   } catch (error) {
@@ -2652,12 +2673,13 @@ const logBox = document.getElementById('logBox');
 const initialSentence = `
   遊戯王ソリティアツールへようこそ！
   この欄には操作ログが記録されます。
-  詳しい使い方はnoteとYouTubeをご覧ください。 
+  詳しい使い方はnoteで。
+  https://note.com/mirayugioh/n/n1081ba18fabe
   @mirayugioh
 `;
-logBox.innerText = initialSentence;
-const addLog = (actionType,
-  details = {}) => {
+//logBox.innerText = initialSentence;
+logBox.value = initialSentence;
+const addLog = (actionType, details = {}) => {
   const log = {
     actionType,
     ...details
@@ -2669,29 +2691,31 @@ const addLog = (actionType,
 }
 //ログを装飾付きで残す
 const displayJson = (jsonData) => { 
-  logBox.innerHTML = `<pre>${syntaxHighlight(jsonData)}</pre>`; 
+  // logBox.innerHTML = `<pre>${syntaxHighlight(jsonData)}</pre>`; 
+  logBox.value = JSON.stringify(jsonData, null, 2);
+  logBox.style.color = '#FFFF00'; // ネオン黄色
 };
-const syntaxHighlight = (json) => {
-    if (typeof json !== "string") {
-        json = JSON.stringify(json, null, 2);
-    }
-    // HTML の特殊文字をエスケープ（< > &）
-    json = json
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;");
-    // JSON の各要素にハイライト適用
-    return json
-        // .replace(/"([^"]+)":/g, '<span class="json-key">"$1"</span>:') // キー
-        .replace(/"(.*?)"/g, '<span class="json-string">"$1"</span>') // 文字列
-        .replace(/\b(-?\d+(\.\d+)?)\b/g, '<span class="json-number">$1</span>') // 数値
-        .replace(/\b(true|false)\b/g, '<span class="json-boolean">$1</span>') // ブール値
-        .replace(/\b(null)\b/g, '<span class="json-null">$1</span>'); // null
-};
+// const syntaxHighlight = (json) => {
+//     if (typeof json !== "string") {
+//         json = JSON.stringify(json, null, 2);
+//     }
+//     // HTML の特殊文字をエスケープ（< > &）
+//     json = json
+//         .replace(/&/g, "&amp;")
+//         .replace(/</g, "&lt;")
+//         .replace(/>/g, "&gt;");
+//     // JSON の各要素にハイライト適用
+//     return json
+//         // .replace(/"([^"]+)":/g, '<span class="json-key">"$1"</span>:') // キー
+//         .replace(/"(.*?)"/g, '<span class="json-string">"$1"</span>') // 文字列
+//         .replace(/\b(-?\d+(\.\d+)?)\b/g, '<span class="json-number">$1</span>') // 数値
+//         .replace(/\b(true|false)\b/g, '<span class="json-boolean">$1</span>') // ブール値
+//         .replace(/\b(null)\b/g, '<span class="json-null">$1</span>'); // null
+// };
 //一時コメント
 const tempCommentBox = document.getElementById('tempCommentBox');
 const initialHeight = tempCommentBox.clientHeight; 
-const initialFontSize = initialHeight / 5.5; 
+const initialFontSize = initialHeight / 5.7; 
 tempCommentBox.style.fontSize = `${initialFontSize}px`; 
 //TODO 文字が増えたら自動でフォントサイズを縮小したい
 // ('input', () => { // テキストが入力されるたびにフォントサイズを調整
@@ -2977,7 +3001,7 @@ const displayUsedCards = () => {
     if (!confirmed) return;
     const allCards = document.querySelectorAll('.card');
     const allCardsOnZoneBoard = Array.from(allCards).filter(obj => isInside(getRect(obj), getRect(zoneBoard)));
-    const sortedAllCardsOnZoneBoard = allCardsOnZoneBoard.sort((first, second) => typeOrder[first.dataset.cardType] - typeOrder[second.dataset.cardType]);
+    const sortedAllCardsOnZoneBoard = allCardsOnZoneBoard.sort((first, second) => typeOrder[first.dataset.cardType] - typeOrder[second.dataset.cardType])
     for (const sortedCardOnZoneBoard of sortedAllCardsOnZoneBoard) {
       setCardFace(sortedCardOnZoneBoard, 'front');
       setCardRotation(sortedCardOnZoneBoard, '0');
@@ -3045,13 +3069,15 @@ async function playSound(url) {
   }
 }
 //iframeのやつ
-const iframeBoard = document.getElementById('iframeBoard');
-const iframeElement = document.getElementById('iframeElement');
-const displayIframe = (cardName) => {
-  const encodedCardName = encodeURIComponent(cardName);
-  console.log(`${cardName}が${encodedCardName}にエンコードされました。`);
-  //const iframeUrl = //わからなくなったので没
-  iframeElement.src = iframeUrl;
-}
+// const iframeBoard = document.getElementById('iframeBoard');
+// const iframeElement = document.getElementById('iframeElement');
+// const displayIframe = (cardName) => {
+//   const encodedCardName = encodeURIComponent(cardName);
+//   //console.log(`${cardName}が${encodedCardName}にエンコードされました。`);
+//   //const iframeUrl = //わからなくなったので没
+//   iframeElement.src = iframeUrl;
+// }
 </script>
+
 </body>
+</html>
