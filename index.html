@@ -514,8 +514,8 @@ button {
 
 <script>
 //APIキー
-const apiKey = 'AbCdEfGhIjKLmOPqrSTUvWXyz'; // ★APIキーを設定する
-const searchEngineId = '123ad4567defgh89'; // ★検索エンジンIDを設定
+const apiKey = 'sample'; // ★APIキーを設定する
+const searchEngineId = 'sample'; // ★検索エンジンIDを設定
 //ブラウザの戻るボタンと再読み込みボタンを無効化
 window.history.pushState(null, null, null); //画面初期表示時に遷移先nullの履歴を追加する
 window.addEventListener('popstate', () => {
@@ -1427,7 +1427,7 @@ createThemeCards(
 //焔聖騎士
 createThemeCards(
   'infernoble',
-  'https://mirayugioh.github.io/yugiohSolitaireTool/card/infernoble/アンジェリカ.jpg',
+  'https://mirayugioh.github.io/yugiohSolitaireTool/card/infernoble/天子の指輪.jpg',
   [
     {type: 'ef', name: 'キリビレデイ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/infernoble/キリビレデイ.jpg'}
     ,{type: 'ef', name: 'ローラン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/infernoble/ローラン.jpg'}
@@ -1465,6 +1465,26 @@ createThemeCards(
     ,{type: 'sp', name: '愚鈍の斧', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/infernoble/愚鈍の斧.jpg'}
     ,{type: 'ef', name: 'レッドレイヤー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/infernoble/レッドレイヤー.jpg'}
     ,{type: 'xy', name: 'クレイヴソリッシュ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/infernoble/クレイヴソリッシュ.jpg'}
+  ]
+);
+//炎の剣士
+createThemeCards(
+  'fireWarrior',
+  'https://mirayugioh.github.io/yugiohSolitaireTool/card/fireWarrior/闘炎の剣士.jpg',
+  [
+    {type: 'ef', name: '飛龍炎サラマンドラ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/fireWarrior/飛龍炎サラマンドラ.jpg'}
+    ,{type: 'ef', name: '闘炎の剣士', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/fireWarrior/闘炎の剣士.jpg'}
+    ,{type: 'ef', name: '黒炎の剣士－ブラック・フレア・ソードマン－', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/fireWarrior/黒炎の剣士－ブラック・フレア・ソードマン－.jpg'}
+    ,{type: 'ef', name: '幻炎の剣士－ミラージュ・ソードマン－', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/fireWarrior/幻炎の剣士－ミラージュ・ソードマン－.jpg'}
+    ,{type: 'fu', name: '闘気炎斬龍', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/fireWarrior/闘気炎斬龍.jpg'}
+    ,{type: 'fu', name: '黒炎の騎士－ブラック・フレア・ナイト－', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/fireWarrior/黒炎の騎士－ブラック・フレア・ナイト－.jpg'}
+    ,{type: 'fu', name: '極炎の剣士', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/fireWarrior/極炎の剣士.jpg'}
+    ,{type: 'sp', name: '闘気炎斬剣', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/fireWarrior/闘気炎斬剣.jpg'}
+    ,{type: 'sp', name: '炎の剣域', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/fireWarrior/炎の剣域.jpg'}
+    ,{type: 'sp', name: 'サラマンドラ・フュージョン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/fireWarrior/サラマンドラ・フュージョン.jpg'}
+    ,{type: 'tr', name: '炎の剣舞', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/fireWarrior/炎の剣舞.jpg'}
+    ,{type: 'tr', name: '鎖付き飛龍炎刃', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/fireWarrior/鎖付き飛龍炎刃.jpg'}
+    ,{type: 'fu', name: '炎の剣士', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/fireWarrior/炎の剣士.jpg'}
   ]
 );
 //イグナイト
@@ -1672,6 +1692,8 @@ createThemeCards(
     ,{type:'fu',name: 'ラクリモーサ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/smith/ラクリモーサ.jpg'}
     ,{type:'ef',name: '紅涙の魔', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/smith/紅涙の魔.jpg'}
     ,{type:'li',name: '天ノ月', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/smith/天ノ月.jpg'}
+    ,{type: 'xy', name:'メロメロメロディ', url: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTBCrEacHHQvM9MB3xxT4ivXUcxx6T5fxKYAMvlGGJaAV1zjjR97jmcj4dEHKXWERxCZTpoa-dQGE7N7MnAX64NcShvfe9H4L0nZ2paGus'}
+    ,{type: 'xy', name:'ウェルズビュート', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW0zf2dPr_A0m3Gbwt36W6Osx-f6QuWKlTpiQ9343DA_Y164IFaWjqTLY&s=10'}
   ]
 );
 //竹光
@@ -1879,7 +1901,7 @@ createThemeCards(
     ,{type:'ef',name: '破戒僧', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/sixSamurai/破戒僧.jpg'}
     ,{type:'sy',name: 'エニシシンクロ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/sixSamurai/エニシシンクロ.jpg'}
     ,{type:'sy',name: 'キザンシンクロ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/sixSamurai/キザンシンクロ.jpg'}
-    ,{type:'sy',name: 'シエン進化系', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/sixSamurai/シエン進化系.jpg'}
+    ,{type:'sy',name: 'シエン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/sixSamurai/シエン進化系.jpg'}
   ]
 );
 //恐竜
@@ -2011,6 +2033,58 @@ createThemeCards(
     ,{type:'ef',name: 'BMG', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/darkMagician/BMG.jpg'}
   ]
 );
+//ブルーアイズ
+createThemeCards(
+  'blueEyes',
+  'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青眼の白龍.jpg',
+  [
+    {type: 'ef', name: '青き眼の賢士', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青き眼の賢士.jpg'}
+    ,{type: 'ef', name: '青き眼の祭司', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青き眼の祭司.jpg'}
+    ,{type: 'ef', name: '青き眼の巫女', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青き眼の巫女.jpg'}
+    ,{type: 'ef', name: '青き眼の護人', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青き眼の護人.jpg'}
+    ,{type: 'ef', name: 'ネオ・カイザー・シーホース', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/ネオ・カイザー・シーホース.jpg'}
+    ,{type: 'ef', name: '太古の白石', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/太古の白石.jpg'}
+    ,{type: 'ef', name: 'ロード・オブ・ドラゴン－ドラゴンの独裁者－', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/ロード・オブ・ドラゴン－ドラゴンの独裁者－.jpg'}
+    ,{type: 'ef', name: 'ディープアイズ・ホワイト・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/ディープアイズ・ホワイト・ドラゴン.jpg'}
+    ,{type: 'li', name: '青き眼の精霊', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青き眼の精霊.jpg'}
+    ,{type: 'sp', name: '青き眼の威光', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青き眼の威光.jpg'}
+    ,{type: 'sp', name: '青き眼の幻出', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青き眼の幻出.jpg'}
+    ,{type: 'sp', name: '光の導き', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/光の導き.jpg'}
+    ,{type: 'sp', name: 'ビンゴマシーンＧＯ！ＧＯ！', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/ビンゴマシーンＧＯ！ＧＯ！.jpg'}
+    ,{type: 'tr', name: '強靭！無敵！最強！', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/強靭！無敵！最強！.jpg'}
+    ,{type: 'ef', name: '青き眼の乙女', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青き眼の乙女.jpg'}
+    ,{type: 'ef', name: '白き乙女', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/白き乙女.jpg'}
+    ,{type: 'ef', name: '伝説の白石', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/伝説の白石.jpg'}
+    ,{type: 'sy', name: '蒼眼の銀龍', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/蒼眼の銀龍.jpg'}
+    ,{type: 'xy', name: '藍眼の銀龍', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/藍眼の銀龍.jpg'}
+    ,{type: 'xy', name: '伝説の白き龍', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/伝説の白き龍.jpg'}
+    ,{type: 'sp', name: '青き眼の祈り', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青き眼の祈り.jpg'}
+    ,{type: 'sp', name: '青き眼の激臨', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青き眼の激臨.jpg'}
+    ,{type: 'sp', name: '究極融合', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/究極融合.jpg'}
+    ,{type: 'sp', name: '青眼龍轟臨', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青眼龍轟臨.jpg'}
+    ,{type: 'sp', name: '光の霊堂', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/光の霊堂.jpg'}
+    ,{type: 'tr', name: '白き龍の威光', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/白き龍の威光.jpg'}
+    ,{type: 'tr', name: '真の光', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/真の光.jpg'}
+    ,{type: 'no', name: '青眼の白龍', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青眼の白龍.jpg'}
+    ,{type: 'ef', name: '心宿りし青眼竜', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/心宿りし青眼竜.jpg'}
+    ,{type: 'ef', name: '白き霊龍', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/白き霊龍.jpg'}
+    ,{type: 'ef', name: '深淵の青眼龍', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/深淵の青眼龍.jpg'}
+    ,{type: 'ef', name: 'ブルーアイズ・ジェット・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/ブルーアイズ・ジェット・ドラゴン.jpg'}
+    ,{type: 'ef', name: 'ブルーアイズ・ソリッド・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/ブルーアイズ・ソリッド・ドラゴン.jpg'}
+    ,{type: 'ef', name: '青眼の亜白龍', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青眼の亜白龍.jpg'}
+    ,{type: 'ef', name: '青眼の光龍', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青眼の光龍.jpg'}
+    ,{type: 'ri', name: '青眼の混沌龍', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青眼の混沌龍.jpg'}
+    ,{type: 'ri', name: 'ブルーアイズ・カオス・ＭＡＸ・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/ブルーアイズ・カオス・ＭＡＸ・ドラゴン.jpg'}
+    ,{type: 'fu', name: 'ブルーアイズ・タイラント・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/ブルーアイズ・タイラント・ドラゴン.jpg'}
+    ,{type: 'fu', name: '青眼の双爆裂龍', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青眼の双爆裂龍.jpg'}
+    ,{type: 'fu', name: '真青眼の究極竜', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/真青眼の究極竜.jpg'}
+    ,{type: 'fu', name: '青眼の究極竜', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青眼の究極竜.jpg'}
+    ,{type: 'fu', name: '青眼の究極亜竜', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青眼の究極亜竜.jpg'}
+    ,{type: 'sy', name: '青眼の精霊龍', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青眼の精霊龍.jpg'}
+    ,{type: 'sy', name: '青眼の究極霊竜', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青眼の究極霊竜.jpg'}
+  ]
+);
+  
 //オルターガイスト
 createThemeCards(
   'Altergeist',
@@ -2593,6 +2667,7 @@ createThemeCards(
     ,{type:'pe',name: 'ワカU4', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/ワカU4.jpg'}
   ]
 );
+
 //Google検索APIでカードを生成する
 const inputTextBox = document.getElementById('inputTextBox');
 const searchButton = document.getElementById('searchButton');
@@ -2715,7 +2790,7 @@ const displayJson = (jsonData) => {
 //一時コメント
 const tempCommentBox = document.getElementById('tempCommentBox');
 const initialHeight = tempCommentBox.clientHeight; 
-const initialFontSize = initialHeight / 5.7; 
+const initialFontSize = initialHeight / 6.2; 
 tempCommentBox.style.fontSize = `${initialFontSize}px`; 
 //TODO 文字が増えたら自動でフォントサイズを縮小したい
 // ('input', () => { // テキストが入力されるたびにフォントサイズを調整
