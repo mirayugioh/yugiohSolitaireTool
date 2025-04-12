@@ -983,8 +983,10 @@ const backgroundImageChoices = [
   { "name": "noid", "url": "https://mirayugioh.github.io/yugiohSolitaireTool/imageContent/backGround/noid.jpg" },
   { "name": "music", "url": "https://mirayugioh.github.io/yugiohSolitaireTool/imageContent/backGround/music.jpg" },
   { "name": "lunaLight", "url": "https://mirayugioh.github.io/yugiohSolitaireTool/imageContent/backGround/lunaLight.jpg" },
-  {"name": "linkage", "url": "https://mirayugioh.github.io/yugiohSolitaireTool/imageContent/backGround/linkage.jpg"},
-  { "name": "pendulum", "url": "https://mirayugioh.github.io/yugiohSolitaireTool/imageContent/backGround/pendulum.jpg" }
+  {"name": "linkage", "url": "https://mirayugioh.github.io/yugiohSolitaireTool/imageContent/backGround/linkage.jpg"}
+  ,{ "name": "pendulum", "url": "https://mirayugioh.github.io/yugiohSolitaireTool/imageContent/backGround/pendulum.jpg" }
+  ,{ "name": "drytron", "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOdxmFJXFhoDAr5jENw4_53S9bSINJG8WdV_0dadrKlTkWPFcZg_iP7VJh&s=10" }
+
 ]
 zoneBoard.style.backgroundImage = `url(${backgroundImageChoices[0].url})`;
 const changeZoneBackgroundButton = document.getElementById('changeZoneBackgroundButton');
@@ -1333,8 +1335,9 @@ createThemeCards(
     ,{type: 'sp', name: '抹殺の指名者', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/popularMain/抹殺の指名者.jpg'}
     ,{type: 'sp', name: 'ワンフォーワン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/popularMain/ワンフォーワン.jpg'}
     ,{type: 'tr', name: 'リブート', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/popularMain/リブート.jpg'}
-    ,{type: 'sp', name: '三戦', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/popularMain/三戦.jpg'}
+    ,{type: 'sp', name: '三戦の才', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/popularMain/三戦.jpg'}
     ,{type: 'ef', name: 'レボリューションシンクロン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/popularMain/レボリューションシンクロン.jpg'}
+    ,{type: 'ef', name:'ジェット・シンクロン', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMMsl46dw8ayAWwkq6rKC6Sn8HZAMYuKiRan2vD1Q8SK1X87jXpVq5h5g&s=10'}
   ]
 );
 //汎用カード（エクストラデッキに入るやつ）
@@ -1639,6 +1642,21 @@ createThemeCards(
     {type: 'sp', name: '無尽機関アルギロ・システム', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Therion/無尽機関アルギロ・システム.jpg'}
   ]
 );
+//魅惑の女王
+createThemeCards(
+  'Allure',
+  'https://mirayugioh.github.io/yugiohSolitaireTool/card/Allure/混沌なる魅惑の女王.jpg',
+  [
+    {type: 'ef', name: '女王親衛隊', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Allure/女王親衛隊.jpg'}
+    ,{type: 'li', name: '金色の魅惑の女王', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Allure/金色の魅惑の女王.jpg'}
+    ,{type: 'ef', name: '魅惑の女王ＬＶ７', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Allure/魅惑の女王ＬＶ７.jpg'}
+    ,{type: 'ef', name: '魅惑の女王ＬＶ５', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Allure/魅惑の女王ＬＶ５.jpg'}
+    ,{type: 'ef', name: '魅惑の女王ＬＶ３', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Allure/魅惑の女王ＬＶ３.jpg'}
+    ,{type: 'ef', name: '混沌なる魅惑の女王', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Allure/混沌なる魅惑の女王.jpg'}
+    ,{type: 'sp', name: '魅惑の舞', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Allure/魅惑の舞.jpg'}
+    ,{type: 'sp', name: '魅惑の宮殿', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Allure/魅惑の宮殿.jpg'}
+  ]
+);
 //勇者
 createThemeCards(
   'brave', 
@@ -1688,12 +1706,14 @@ createThemeCards(
     ,{type:'tr',name: '魔の楽園', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/smith/魔の楽園.jpg'}
     ,{type:'sp',name: '詠聖', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/smith/詠聖.jpg'}
     ,{type:'fu',name: 'ディエスイレ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/smith/ディエスイレ.jpg'}
-    ,{type:'ef',name: '魔を刻むデモンスミス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/smith/魔を刻むデモンスミス.jpg'}
+    ,{type:'ef',name: '魔を刻むデモンスミス', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt94tjwWb5OFSwd3JPP1RmJNc97an40cSosNwMoaO0QoxdP60B5UIvoh0&s=10'}
     ,{type:'fu',name: 'ラクリモーサ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/smith/ラクリモーサ.jpg'}
     ,{type:'ef',name: '紅涙の魔', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/smith/紅涙の魔.jpg'}
     ,{type:'li',name: '天ノ月', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/smith/天ノ月.jpg'}
     ,{type: 'xy', name:'メロメロメロディ', url: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTBCrEacHHQvM9MB3xxT4ivXUcxx6T5fxKYAMvlGGJaAV1zjjR97jmcj4dEHKXWERxCZTpoa-dQGE7N7MnAX64NcShvfe9H4L0nZ2paGus'}
     ,{type: 'xy', name:'ウェルズビュート', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW0zf2dPr_A0m3Gbwt36W6Osx-f6QuWKlTpiQ9343DA_Y164IFaWjqTLY&s=10'}
+    ,{type: 'fu', name:'優麗なる霊鏡姫', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR4ef3qBcSk1NrUGmN6LngfFFdIXM4CV_5uDbpwkwknOM8JKixsejLZOs&s=10'}
+    ,{type: 'fu', name:'死霊公爵', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUNGUjH3da6udhiezZhs-ZslRu7zZyiC0uD01NF2g-DvkAa5zNwY6b7tQ&s=10'}
   ]
 );
 //竹光
@@ -1707,6 +1727,28 @@ createThemeCards(
     ,{type: 'sp', name: '折れ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/takemitsu/折れ.jpg'}
     ,{type: 'sp', name: '燃え', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/takemitsu/燃え.jpg'}
     ,{type: 'sp', name: '魂を吸う', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/takemitsu/魂を吸う.jpg'}
+  ]
+);
+//レスキューエース
+createThemeCards(
+  'rescueAce',
+  'https://mirayugioh.github.io/yugiohSolitaireTool/card/rescueAce/Ｒ－ＡＣＥエアホイスター.jpg',
+  [
+    {type: 'ef', name: 'Ｒ－ＡＣＥイントルーダー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/rescueAce/Ｒ－ＡＣＥイントルーダー.jpg'}
+    ,{type: 'ef', name: 'Ｒ－ＡＣＥインパルス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/rescueAce/Ｒ－ＡＣＥインパルス.jpg'}
+    ,{type: 'ef', name: 'Ｒ－ＡＣＥエアホイスター', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/rescueAce/Ｒ－ＡＣＥエアホイスター.jpg'}
+    ,{type: 'ef', name: 'Ｒ－ＡＣＥハイドラント', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/rescueAce/Ｒ－ＡＣＥハイドラント.jpg'}
+    ,{type: 'ef', name: 'Ｒ－ＡＣＥファイア・アタッカー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/rescueAce/Ｒ－ＡＣＥファイア・アタッカー.jpg'}
+    ,{type: 'ef', name: 'Ｒ－ＡＣＥタービュランス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/rescueAce/Ｒ－ＡＣＥタービュランス.jpg'}
+    ,{type: 'ef', name: 'Ｒ－ＡＣＥファイア・エンジン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/rescueAce/Ｒ－ＡＣＥファイア・エンジン.jpg'}
+    ,{type: 'ef', name: 'Ｒ－ＡＣＥプリベンター', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/rescueAce/Ｒ－ＡＣＥプリベンター.jpg'}
+    ,{type: 'sp', name: 'ＡＬＥＲＴ！', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/rescueAce/ＡＬＥＲＴ！.jpg'}
+    ,{type: 'sp', name: 'ＥＭＥＲＧＥＮＣＹ！', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/rescueAce/ＥＭＥＲＧＥＮＣＹ！.jpg'}
+    ,{type: 'sp', name: 'ＲＥＳＣＵＥ！', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/rescueAce/ＲＥＳＣＵＥ！.jpg'}
+    ,{type: 'sp', name: 'Ｒ－ＡＣＥヘッドクオーター', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/rescueAce/Ｒ－ＡＣＥヘッドクオーター.jpg'}
+    ,{type: 'tr', name: 'ＥＸＴＩＮＧＵＩＳＨ！', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/rescueAce/ＥＸＴＩＮＧＵＩＳＨ！.jpg'}
+    ,{type: 'tr', name: 'ＣＯＮＴＡＩＮ！', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/rescueAce/ＣＯＮＴＡＩＮ！.jpg'}
+    ,{type: 'tr', name: 'ＲＥＩＮＦＯＲＣＥ！', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/rescueAce/ＲＥＩＮＦＯＲＣＥ！.jpg'}
   ]
 );
 //幻影騎士団・RR・BF
@@ -1727,7 +1769,7 @@ createThemeCards(
     ,{type:'ef',name: 'サイレントブーツ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/phantom/サイレントブーツ.jpg'}
     ,{type:'ef',name: 'ダスティローブ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/phantom/ダスティローブ.jpg'}
     ,{type:'ef',name: 'ステンドグリーブ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/phantom/ステンドグリーブ.jpg'}
-    ,{type:'ef',name: 'ティアースケイル', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/phantom/ティアースケイル.jpg'}
+    ,{type:'ef',name: 'ティアースケイル', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTImsiisqkh8E0tmu-nNPrUe84GkidizAHVZA&usqp=CAU'}
     ,{type:'xy',name: 'レイダーズナイト', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/phantom/レイダーズナイト.jpg'}
     ,{type:'xy',name: 'アークリベリオン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/phantom/アークリベリオン.jpg'}
     ,{type:'tr',name: '幻影剣', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/phantom/幻影剣.jpg'}
@@ -1761,6 +1803,7 @@ createThemeCards(
     ,{type:'ef',name: 'ジャオロン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/vs/ジャオロン.jpg'}
     ,{type:'tr',name: 'トリニティバースト', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/vs/トリニティバースト.jpg'}
     ,{type:'tr',name: '裏螺旋', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/vs/裏螺旋.jpg'}
+    ,{type: 'ef', name:'ヘヴィボーガー', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUy1t8oWJuubikHViHa19rhfzE-y5xN9gXr3EcP7PWQcElQ3MIPpUhOJKn&s=10'}
   ]
 );
 //スパイラル
@@ -2084,27 +2127,37 @@ createThemeCards(
     ,{type: 'sy', name: '青眼の究極霊竜', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/blueEyes/青眼の究極霊竜.jpg'}
   ]
 );
-  
 //オルターガイスト
 createThemeCards(
-  'Altergeist',
-  'https://mirayugioh.github.io/yugiohSolitaireTool/card/Altergeist/プロトコル.jpg',
+  'alter',
+  'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・マルチフェイカー.jpg',
   [
-    {type:'li',name: 'プライムバンシー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Altergeist/プライムバンシー.jpg'}
-    ,{type:'li',name: 'ヘクスティア', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Altergeist/ヘクスティア.jpg'}
-    ,{type:'ef',name: 'メリュシーク', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Altergeist/メリュシーク.jpg'}
-    ,{type:'li',name: 'キードゥルガー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Altergeist/キードゥルガー.jpg'}
-    ,{type:'tr',name: 'フェイルオーバー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Altergeist/フェイルオーバー.jpg'}
-    ,{type:'tr',name: 'エミュレルフ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Altergeist/エミュレルフ.jpg'}
-    ,{type:'tr',name: 'ホーンデッドロック', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Altergeist/ホーンデッドロック.jpg'}
-    ,{type:'ef',name: 'マルチフェイカー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Altergeist/マルチフェイカー.jpg'}
-    ,{type:'ef',name: 'フィフィネラグ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Altergeist/フィフィネラグ.jpg'}
-    ,{type:'li',name: 'アドミニア', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Altergeist/アドミニア.jpg'}
-    ,{type:'ef',name: 'マルウィスプ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Altergeist/マルウィスプ.jpg'}
-    ,{type:'ef',name: 'ペリネトレータ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Altergeist/ペリネトレータ.jpg'}
-    ,{type:'ef',name: 'ピクシール', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Altergeist/ピクシール.jpg'}
-    ,{type:'tr',name: 'プロトコル', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Altergeist/プロトコル.jpg'}
-    ,{type:'tr',name: 'スプーフィング', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Altergeist/スプーフィング.jpg'}
+    {type: 'sp', name: '魔法族の里', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/魔法族の里.jpg'}
+    ,{type: 'ef', name: 'オルターガイスト・ピクシール', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・ピクシール.jpg'}
+    ,{type: 'ef', name: 'オルターガイスト・ペリネトレータ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・ペリネトレータ.jpg'}
+    ,{type: 'ef', name: 'オルターガイスト・プークエリ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・プークエリ.jpg'}
+    ,{type: 'ef', name: 'オルターガイスト・メリュシーク', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・メリュシーク.jpg'}
+    ,{type: 'ef', name: 'オルターガイスト・シルキタス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・シルキタス.jpg'}
+    ,{type: 'ef', name: 'オルターガイスト・フィフィネラグ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・フィフィネラグ.jpg'}
+    ,{type: 'ef', name: 'オルターガイスト・マルウィスプ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・マルウィスプ.jpg'}
+    ,{type: 'ef', name: 'オルターガイスト・マルチフェイカー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・マルチフェイカー.jpg'}
+    ,{type: 'ef', name: 'オルターガイスト・フィジアラート', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・フィジアラート.jpg'}
+    ,{type: 'ef', name: 'オルターガイスト・マリオネッター', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・マリオネッター.jpg'}
+    ,{type: 'ef', name: 'オルターガイスト・クンティエリ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・クンティエリ.jpg'}
+    ,{type: 'sy', name: 'オルターガイスト・ドラッグウィリオン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・ドラッグウィリオン.jpg'}
+    ,{type: 'li', name: 'オルターガイスト・キードゥルガー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・キードゥルガー.jpg'}
+    ,{type: 'li', name: 'オルターガイスト・ヘクスティア', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・ヘクスティア.jpg'}
+    ,{type: 'li', name: 'オルターガイスト・プライムバンシー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・プライムバンシー.jpg'}
+    ,{type: 'li', name: 'オルターガイスト・アドミニア', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・アドミニア.jpg'}
+    ,{type: 'li', name: 'オルターガイスト・メモリーガント', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・メモリーガント.jpg'}
+    ,{type: 'tr', name: 'オルターガイスト・カモフラージュ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・カモフラージュ.jpg'}
+    ,{type: 'tr', name: 'オルターガイスト・マテリアリゼーション', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・マテリアリゼーション.jpg'}
+    ,{type: 'tr', name: 'オルターガイスト・リバイタリゼーション', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・リバイタリゼーション.jpg'}
+    ,{type: 'tr', name: 'オルターガイスト・エミュレルフ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・エミュレルフ.jpg'}
+    ,{type: 'tr', name: 'オルターガイスト・フェイルオーバー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・フェイルオーバー.jpg'}
+    ,{type: 'tr', name: 'オルターガイスト・プロトコル', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・プロトコル.jpg'}
+    ,{type: 'tr', name: 'オルターガイスト・ホーンデッドロック', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/オルターガイスト・ホーンデッドロック.jpg'}
+    ,{type: 'tr', name: 'パーソナル・スプーフィング', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/alter/パーソナル・スプーフィング.jpg'}
   ]
 );
 //インフェルノイド
@@ -2337,6 +2390,7 @@ createThemeCards(
     ,{type:'ef',name: '星鎧', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/mekkKnight/星鎧.jpg'}
     ,{type:'li',name: 'エンリルギルス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/mekkKnight/エンリルギルス.jpg'}
     ,{type:'to',name: '星遺物トークン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/mekkKnight/星遺物トークン.jpg'}
+    ,{type: 'sy', name:'神子イヴ', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfeLR3QD7Te_PMPJnnP_w03P8ZRYSa1yROTKVRWdN41-Ju4DEIrqcQflS2&s=10'}
   ]
 );
 //霊獣
@@ -2430,6 +2484,50 @@ createThemeCards(
     ,{type:'sp',name: '魔界劇場「ファンタスティックシアター」', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/abyssActor/魔界劇場「ファンタスティックシアター」.jpg'}
     ,{type:'sp',name: 'スタンド・イン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/abyssActor/スタンド・イン.jpg'}
     ,{type:'sp',name: '盆回し', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/abyssActor/盆回し.jpg'}
+  ]
+);
+//墓守
+createThemeCards(
+  'graveKeeper',
+  'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/王家の眠る谷－ネクロバレー.jpg',
+  [
+    {type: 'ef', name: '幸運を告げるフクロウ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/幸運を告げるフクロウ.jpg'}
+    ,{type: 'ef', name: '不幸を告げる黒猫', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/不幸を告げる黒猫.jpg'}
+    ,{type: 'ef', name: '墓守の使徒', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の使徒.jpg'}
+    ,{type: 'ef', name: '墓守の従者', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の従者.jpg'}
+    ,{type: 'ef', name: '墓守の呪術師', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の呪術師.jpg'}
+    ,{type: 'ef', name: '墓守の召喚師', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の召喚師.jpg'}
+    ,{type: 'ef', name: '墓守の神職', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の神職.jpg'}
+    ,{type: 'ef', name: '墓守の巫女', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の巫女.jpg'}
+    ,{type: 'ef', name: '墓守の暗殺者', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の暗殺者.jpg'}
+    ,{type: 'ef', name: '墓守の異端者', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の異端者.jpg'}
+    ,{type: 'ef', name: '墓守の大筒持ち', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の大筒持ち.jpg'}
+    ,{type: 'ef', name: '墓守の監視者', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の監視者.jpg'}
+    ,{type: 'ef', name: '墓守の司令官', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の司令官.jpg'}
+    ,{type: 'ef', name: '墓守の偵察者', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の偵察者.jpg'}
+    ,{type: 'ef', name: '墓守の長槍兵', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の長槍兵.jpg'}
+    ,{type: 'ef', name: '墓守の番兵', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の番兵.jpg'}
+    ,{type: 'ef', name: '墓守の伏兵', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の伏兵.jpg'}
+    ,{type: 'ef', name: '墓守の末裔', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の末裔.jpg'}
+    ,{type: 'ef', name: '墓守の霊術師', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の霊術師.jpg'}
+    ,{type: 'ef', name: '墓守の長', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の長.jpg'}
+    ,{type: 'ef', name: '墓守の祈祷師', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の祈祷師.jpg'}
+    ,{type: 'ef', name: '墓守の大神官', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の大神官.jpg'}
+    ,{type: 'ef', name: '墓守の審神者', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の審神者.jpg'}
+    ,{type: 'fu', name: '墓守の異能者', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の異能者.jpg'}
+    ,{type: 'ef', name: 'シャブティのお守り', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/シャブティのお守り.jpg'}
+    ,{type: 'sp', name: '王家の眠る谷－ネクロバレー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/王家の眠る谷－ネクロバレー.jpg'}
+    ,{type: 'sp', name: 'ネクロバレーの玉座', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/ネクロバレーの玉座.jpg'}
+    ,{type: 'sp', name: 'ネクロバレーの祭殿', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/ネクロバレーの祭殿.jpg'}
+    ,{type: 'sp', name: '墓守の石版', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の石版.jpg'}
+    ,{type: 'tr', name: '降霊の儀式', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/降霊の儀式.jpg'}
+    ,{type: 'tr', name: '墓守の罠', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の罠.jpg'}
+    ,{type: 'sp', name: '王家の生け贄', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/王家の生け贄.jpg'}
+    ,{type: 'tr', name: 'ネクロバレーの王墓', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/ネクロバレーの王墓.jpg'}
+    ,{type: 'tr', name: 'ネクロバレーの神殿', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/ネクロバレーの神殿.jpg'}
+    ,{type: 'ef', name: '剣神官ムドラ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/剣神官ムドラ.jpg'}
+    ,{type: 'sp', name: '墓守の刻印', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の刻印.jpg'}
+    ,{type: 'sp', name: '墓守の使い魔', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/graveKeeper/墓守の使い魔.jpg'}
   ]
 );
 //キマイラ
@@ -2621,53 +2719,340 @@ createThemeCards(
 //メメント
 createThemeCards(
   'memento',
-  'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/エンウィッチ.jpg',
+  'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメント・エンウィッチ.jpg',
   [
-    {type:'ef',name: 'ウラモン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/ウラモン.jpg'}
-    ,{type:'ef',name: 'ホーンドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/ホーンドラゴン.jpg'}
-    ,{type:'sp',name: 'メメントラン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメントラン.jpg'}
-    ,{type:'tr',name: 'クレニアムバースト', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/クレニアムバースト.jpg'}
-    ,{type:'ef',name: 'エンウィッチ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/エンウィッチ.jpg'}
-    ,{type:'tr',name: 'フラクチャーダンス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/フラクチャーダンス.jpg'}
-    ,{type:'ef',name: 'メメントシーホース', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメントシーホース.jpg'}
-    ,{type:'ef',name: 'メメントゴブリン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメントゴブリン.jpg'}
-    ,{type:'ef',name: 'メメントダークソード', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメントダークソード.jpg'}
-    ,{type:'sp',name: 'メメントボーンパーティー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメントボーンパーティー.jpg'}
-    ,{type:'sp',name: 'メメントボーンバック', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメントボーンバック.jpg'}
-    ,{type:'ef',name: 'メメントラルテクトリカ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメントラルテクトリカ.jpg'}
+    {type: 'ef', name: 'メメント・ゴブリン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメント・ゴブリン.jpg'}
+    ,{type: 'ef', name: 'メメント・メイス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメント・メイス.jpg'}
+    ,{type: 'ef', name: 'メメント・ウラモン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメント・ウラモン.jpg'}
+    ,{type: 'ef', name: 'メメント・エンウィッチ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメント・エンウィッチ.jpg'}
+    ,{type: 'ef', name: 'メメント・スリーピィ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメント・スリーピィ.jpg'}
+    ,{type: 'ef', name: 'メメント・ダークソード', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメント・ダークソード.jpg'}
+    ,{type: 'ef', name: 'メメント・カクタス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメント・カクタス.jpg'}
+    ,{type: 'ef', name: 'メメント・シーホース', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメント・シーホース.jpg'}
+    ,{type: 'ef', name: 'メメント・ホーン・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメント・ホーン・ドラゴン.jpg'}
+    ,{type: 'ef', name: '冥骸合竜－メメントラル・テクトリカ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/冥骸合竜－メメントラル・テクトリカ.jpg'}
+    ,{type: 'fu', name: 'メメント・ツイン・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメント・ツイン・ドラゴン.jpg'}
+    ,{type: 'fu', name: '冥骸王－メメントラン・テクトリカ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/冥骸王－メメントラン・テクトリカ.jpg'}
+    ,{type: 'sp', name: '冥骸融合－メメント・フュージョン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/冥骸融合－メメント・フュージョン.jpg'}
+    ,{type: 'sp', name: 'メメント・ボーン・パーティー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメント・ボーン・パーティー.jpg'}
+    ,{type: 'sp', name: 'メメント・ボーン・バック', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメント・ボーン・バック.jpg'}
+    ,{type: 'sp', name: '冥骸府－メメントラン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/冥骸府－メメントラン.jpg'}
+    ,{type: 'tr', name: 'メメント・フラクチャー・ダンス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメント・フラクチャー・ダンス.jpg'}
+    ,{type: 'tr', name: 'メメント・クレニアム・バースト', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/memento/メメント・クレニアム・バースト.jpg'}
   ]
 );
 //超重武者
 createThemeCards(
   'superHeavy',
-  'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/カカC.jpg',
+  'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者カカ－Ｃ.jpg',
   [
-    {type:'li',name: 'カカC', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/カカC.jpg'}
-    ,{type:'ef',name: 'オン32', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/オン32.jpg'}
-    ,{type:'ef',name: 'タイマ2', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/タイマ2.jpg'}
-    ,{type:'ef',name: 'テンBN', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/テンBN.jpg'}
-    ,{type:'ef',name: 'グレートウォール', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/グレートウォール.jpg'}
-    ,{type:'ef',name: 'ガイアブースター', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/ガイアブースター.jpg'}
-    ,{type:'ef',name: 'タマC', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/タマC.jpg'}
-    ,{type:'ef',name: 'コブC', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/コブC.jpg'}
-    ,{type:'ef',name: 'ビッグベン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/ビッグベン.jpg'}
-    ,{type:'ef',name: 'マカルガエシ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/マカルガエシ.jpg'}
-    ,{type:'ef',name: 'ダイ8', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/ダイ8.jpg'}
-    ,{type:'ef',name: 'ビッグワラG', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/ビッグワラG.jpg'}
-    ,{type:'ef',name: 'ガントレット', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/ガントレット.jpg'}
-    ,{type:'ef',name: 'オタスK', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/オタスK.jpg'}
-    ,{type:'pe',name: 'ヒスE', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/ヒスE.jpg'}
-    ,{type:'sy',name: 'シノビAC', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/シノビAC.jpg'}
-    ,{type:'sy',name: 'シュテンドウ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/シュテンドウ.jpg'}
-    ,{type:'li',name: '古代の機械弩士', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/古代の機械弩士.jpg'}
-    ,{type:'ef',name: '古代の機械箱', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/古代の機械箱.jpg'}
-    ,{type:'pe',name: 'ビッグベンK', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/ビッグベンK.jpg'}
-    ,{type:'ef',name: 'バイQ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/バイQ.jpg'}
-    ,{type:'ef',name: 'ドウCN', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/ドウCN.jpg'}
-    ,{type:'pe',name: 'ワカU4', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/ワカU4.jpg'}
+    {type: 'ef', name: '超重武者オタス－Ｋ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者オタス－Ｋ.jpg'}
+    ,{type: 'ef', name: '超重武者オン－３２', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者オン－３２.jpg'}
+    ,{type: 'ef', name: '超重武者タイマ－２', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者タイマ－２.jpg'}
+    ,{type: 'ef', name: '超重武者ツヅ－３', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者ツヅ－３.jpg'}
+    ,{type: 'ef', name: '超重武者コブ－Ｃ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者コブ－Ｃ.jpg'}
+    ,{type: 'ef', name: '超重武者タマ－Ｃ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者タマ－Ｃ.jpg'}
+    ,{type: 'ef', name: '超重武者バイ－Ｑ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者バイ－Ｑ.jpg'}
+    ,{type: 'ef', name: '超重武者ホラガ－Ｅ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者ホラガ－Ｅ.jpg'}
+    ,{type: 'ef', name: '超重武者カゲボウ－Ｃ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者カゲボウ－Ｃ.jpg'}
+    ,{type: 'ef', name: '超重武者グロウ－Ｖ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者グロウ－Ｖ.jpg'}
+    ,{type: 'ef', name: '超重武者ココロガマ－Ａ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者ココロガマ－Ａ.jpg'}
+    ,{type: 'ef', name: '超重武者ソード－９９９', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者ソード－９９９.jpg'}
+    ,{type: 'ef', name: '超重武者カブ－１０', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者カブ－１０.jpg'}
+    ,{type: 'ef', name: '超重武者ジシャ－Ｑ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者ジシャ－Ｑ.jpg'}
+    ,{type: 'ef', name: '超重武者ダイ－８', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者ダイ－８.jpg'}
+    ,{type: 'ef', name: '超重武者テンＢ－Ｎ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者テンＢ－Ｎ.jpg'}
+    ,{type: 'ef', name: '超重武者ドウＣ－Ｎ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者ドウＣ－Ｎ.jpg'}
+    ,{type: 'ef', name: '超重武者ワカ－Ｏ２', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者ワカ－Ｏ２.jpg'}
+    ,{type: 'ef', name: '超重武者ヒキャ－Ｑ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者ヒキャ－Ｑ.jpg'}
+    ,{type: 'ef', name: '超重武者ビッグワラ－Ｇ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者ビッグワラ－Ｇ.jpg'}
+    ,{type: 'ef', name: '超重武者ビッグベン－Ｋ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者ビッグベン－Ｋ.jpg'}
+    ,{type: 'ef', name: '超重武者ヌス－１０', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者ヌス－１０.jpg'}
+    ,{type: 'pe', name: '超重輝将サン－５', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重輝将サン－５.jpg'}
+    ,{type: 'pe', name: '超重神童ワカ－Ｕ４', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重神童ワカ－Ｕ４.jpg'}
+    ,{type: 'pe', name: '超重輝将ヒス－Ｅ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重輝将ヒス－Ｅ.jpg'}
+    ,{type: 'pe', name: '超重僧兵ビッグベン－Ｋ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重僧兵ビッグベン－Ｋ.jpg'}
+    ,{type: 'sy', name: '超重剣聖ムサ－Ｃ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重剣聖ムサ－Ｃ.jpg'}
+    ,{type: 'sy', name: '超重神鬼シュテンドウ－Ｇ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重神鬼シュテンドウ－Ｇ.jpg'}
+    ,{type: 'sy', name: '超重忍者シノビ－Ａ・Ｃ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重忍者シノビ－Ａ・Ｃ.jpg'}
+    ,{type: 'sy', name: '超重忍者サルト－Ｂ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重忍者サルト－Ｂ.jpg'}
+    ,{type: 'sy', name: '超重神将シャナ－Ｏ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重神将シャナ－Ｏ.jpg'}
+    ,{type: 'sy', name: '超重魔獣キュウ－Ｂ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重魔獣キュウ－Ｂ.jpg'}
+    ,{type: 'sy', name: '超重荒神スサノ－Ｏ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重荒神スサノ－Ｏ.jpg'}
+    ,{type: 'sy', name: '超重蒸鬼テツドウ－Ｏ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重蒸鬼テツドウ－Ｏ.jpg'}
+    ,{type: 'sy', name: '超重天神マスラ－Ｏ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重天神マスラ－Ｏ.jpg'}
+    ,{type: 'li', name: '超重武者カカ－Ｃ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者カカ－Ｃ.jpg'}
+    ,{type: 'ef', name: '超重武者装留イワトオシ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者装留イワトオシ.jpg'}
+    ,{type: 'ef', name: '超重武者装留ガイア・ブースター', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者装留ガイア・ブースター.jpg'}
+    ,{type: 'ef', name: '超重武者装留グレート・ウォール', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者装留グレート・ウォール.jpg'}
+    ,{type: 'ef', name: '超重武者装留シャイン・クロー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者装留シャイン・クロー.jpg'}
+    ,{type: 'ef', name: '超重武者装留ダブル・ホーン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者装留ダブル・ホーン.jpg'}
+    ,{type: 'ef', name: '超重武者装留チュウサイ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者装留チュウサイ.jpg'}
+    ,{type: 'ef', name: '超重武者装留バスター・ガントレット', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者装留バスター・ガントレット.jpg'}
+    ,{type: 'ef', name: '超重武者装留ビッグバン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者装留ビッグバン.jpg'}
+    ,{type: 'ef', name: '超重武者装留ファイヤー・アーマー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者装留ファイヤー・アーマー.jpg'}
+    ,{type: 'ef', name: '超重武者装留ブレイク・アーマー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者装留ブレイク・アーマー.jpg'}
+    ,{type: 'ef', name: '超重武者装留マカルガエシ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/superHeavy/超重武者装留マカルガエシ.jpg'}
   ]
 );
-
+//ドライトロン
+createThemeCards(
+  'Drytron',
+  'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/流星輝巧群.jpg',
+  [
+    {type: 'ef', name: '竜輝巧－バンα', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/竜輝巧－バンα.jpg'}
+    ,{type: 'ef', name: '竜輝巧－ラスβ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/竜輝巧－ラスβ.jpg'}
+    ,{type: 'ef', name: '竜輝巧－エルγ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/竜輝巧－エルγ.jpg'}
+    ,{type: 'ef', name: '竜輝巧－ルタδ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/竜輝巧－ルタδ.jpg'}
+    ,{type: 'ef', name: '竜輝巧－アルζ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/竜輝巧－アルζ.jpg'}
+    ,{type: 'ef', name: '竜輝巧－νＩＩ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/竜輝巧－νＩＩ.jpg'}
+    ,{type: 'ef', name: '天極輝士－熊斗竜巧α', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/天極輝士－熊斗竜巧α.jpg'}
+    ,{type: 'ri', name: '竜儀巧－メテオニス＝ＤＡＤ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/竜儀巧－メテオニス＝ＤＡＤ.jpg'}
+    ,{type: 'ri', name: '竜儀巧－メテオニス＝ＤＲＡ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/竜儀巧－メテオニス＝ＤＲＡ.jpg'}
+    ,{type: 'ri', name: '竜儀巧－メテオニス＝ＱＵＡ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/竜儀巧－メテオニス＝ＱＵＡ.jpg'}
+    ,{type: 'fu', name: '天極輝艦－熊斗竜巧', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/天極輝艦－熊斗竜巧.jpg'}
+    ,{type: 'xy', name: '竜輝巧－ファフμβ’', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/竜輝巧－ファフμβ’.jpg'}
+    ,{type: 'sp', name: '喰光の竜輝巧', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/喰光の竜輝巧.jpg'}
+    ,{type: 'sp', name: '極超の竜輝巧', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/極超の竜輝巧.jpg'}
+    ,{type: 'sp', name: '天斗輝巧極', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/天斗輝巧極.jpg'}
+    ,{type: 'sp', name: '流星輝巧群', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/流星輝巧群.jpg'}
+    ,{type: 'sp', name: '星彩の竜輝巧', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/星彩の竜輝巧.jpg'}
+    ,{type: 'sp', name: '竜輝巧－ファフニール', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/竜輝巧－ファフニール.jpg'}
+    ,{type: 'tr', name: '流星極輝巧群', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/流星極輝巧群.jpg'}
+    ,{type: 'tr', name: 'ドライトロン流星群', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/ドライトロン流星群.jpg'}
+    ,{type: 'sp', name: '宣告者の預言', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/宣告者の預言.jpg'}
+    ,{type: 'sp', name: '儀式の下準備', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/儀式の下準備.jpg'}
+    ,{type: 'ri', name: '虚竜魔王アモルファクターＰ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/虚竜魔王アモルファクターＰ.jpg'}
+    ,{type: 'ef', name: 'エンジェルＯ７', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/エンジェルＯ７.jpg'}
+    ,{type: 'ef', name: 'マンジュ・ゴッド', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/マンジュ・ゴッド.jpg'}
+    ,{type: 'ef', name: '虚無の統括者', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/虚無の統括者.jpg'}
+    ,{type: 'sp', name: '儀式の準備', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/儀式の準備.jpg'}
+    ,{type: 'ri', name: 'サイバー・エンジェル－弁天－', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/サイバー・エンジェル－弁天－.jpg'}
+    ,{type: 'ef', name: '宣告者の神巫', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/宣告者の神巫.jpg'}
+    ,{type: 'ri', name: 'サイバー・エンジェル－那沙帝弥－', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/サイバー・エンジェル－那沙帝弥－.jpg'}
+    ,{type: 'sy', name: '虹光の宣告者', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/虹光の宣告者.jpg'}
+    ,{type: 'ri', name: '崇光なる宣告者', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/崇光なる宣告者.jpg'}
+    ,{type: 'sy', name: 'ベアルクティ－ポラリィ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/Drytron/ベアルクティ－ポラリィ.jpg'}
+  ]
+);
+//ドラゴン族汎用
+createThemeCards(
+  'dragon',
+  'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/レッドアイズ・ダークネスメタルドラゴン.jpg',
+  [
+    {type: 'ef', name: 'レッドアイズ・ダークネスメタルドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/レッドアイズ・ダークネスメタルドラゴン.jpg'}
+    ,{type: 'ef', name: '星雲龍ネビュラ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/星雲龍ネビュラ.jpg'}
+    ,{type: 'ef', name: '螺旋竜バルジ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/螺旋竜バルジ.jpg'}
+    ,{type: 'ef', name: '闇と消滅の竜', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/闇と消滅の竜.jpg'}
+    ,{type: 'ef', name: '光と昇華の竜', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/光と昇華の竜.jpg'}
+    ,{type: 'ef', name: '輝光竜セイファート', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/輝光竜セイファート.jpg'}
+    ,{type: 'ef', name: '輪廻竜サンサーラ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/輪廻竜サンサーラ.jpg'}
+    ,{type: 'pe', name: '終焉龍カオスエンペラー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/終焉龍カオスエンペラー.jpg'}
+    ,{type: 'fu', name: '光と闇の竜王', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/光と闇の竜王.jpg'}
+    ,{type: 'fu', name: '空隙の原星竜', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/空隙の原星竜.jpg'}
+    ,{type: 'xy', name: '聖刻龍王ーアトゥムス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/聖刻龍王ーアトゥムス.jpg'}
+    ,{type: 'li', name: '守護竜ピスティ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/守護竜ピスティ.jpg'}
+    ,{type: 'li', name: '天球の聖刻印', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/天球の聖刻印.jpg'}
+    ,{type: 'li', name: 'ツイン・トライアングル・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/ツイン・トライアングル・ドラゴン.jpg'}
+    ,{type: 'sp', name: '竜の霊廟', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/竜の霊廟.jpg'}
+    ,{type: 'sp', name: '混沌領域', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/混沌領域.jpg'}
+    ,{type: 'sp', name: '超再生能力', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/超再生能力.jpg'}
+    ,{type: 'ef', name: '光征竜－スペクトル', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/光征竜－スペクトル.jpg'}
+    ,{type: 'ef', name: '闇征竜－ネビュラス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/闇征竜－ネビュラス.jpg'}
+    ,{type: 'ef', name: '嵐征竜－テンペスト', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/嵐征竜－テンペスト.jpg'}
+    ,{type: 'ef', name: '焔征竜－ブラスター', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/焔征竜－ブラスター.jpg'}
+    ,{type: 'ef', name: '瀑征竜－タイダル', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/瀑征竜－タイダル.jpg'}
+    ,{type: 'ef', name: '巌征竜－レドックス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/巌征竜－レドックス.jpg'}
+    ,{type: 'sp', name: '超竜災禍', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/超竜災禍.jpg'}
+    ,{type: 'xy', name: '征覇竜－ブレイズ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/征覇竜－ブレイズ.jpg'}
+    ,{type: 'xy', name: '超征竜－ディザスター', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/超征竜－ディザスター.jpg'}
+    ,{type: 'xy', name: '極征竜－シャスマティス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/極征竜－シャスマティス.jpg'}
+    ,{type: 'xy', name: '凶征竜－エクレプシス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragon/凶征竜－エクレプシス.jpg'}
+  ]
+);
+//ドラグニティ
+createThemeCards(
+  'dragnity',
+  'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティナイト－ロムルス.jpg',
+  [
+    {type: 'ef', name: 'ドラグニティ－レムス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティ－レムス.jpg'}
+    ,{type: 'ef', name: 'ドラグニティ－ファランクス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティ－ファランクス.jpg'}
+    ,{type: 'sy', name: 'ドラグニティナイト－アラドヴァル', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティナイト－アラドヴァル.jpg'}
+    ,{type: 'sp', name: '竜の渓谷', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/竜の渓谷.jpg'}
+    ,{type: 'sy', name: 'ドラグニティナイト－ヴァジュランダ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティナイト－ヴァジュランダ.jpg'}
+    ,{type: 'sp', name: 'ドラグニティ・グロー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティ・グロー.jpg'}
+    ,{type: 'ef', name: 'ドラグニティ－ドゥクス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティ－ドゥクス.jpg'}
+    ,{type: 'ef', name: 'ドラグニティ－レガトゥス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティ－レガトゥス.jpg'}
+    ,{type: 'sp', name: 'ドラグニティの神槍', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティの神槍.jpg'}
+    ,{type: 'li', name: 'ドラグニティナイト－ロムルス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティナイト－ロムルス.jpg'}
+    ,{type: 'sp', name: '疾風のドラグニティ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/疾風のドラグニティ.jpg'}
+    ,{type: 'ef', name: 'ドラグニティアームズ－レヴァテイン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティアームズ－レヴァテイン.jpg'}
+    ,{type: 'sy', name: 'ドラグニティナイト－ガジャルグ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティナイト－ガジャルグ.jpg'}
+    ,{type: 'ef', name: 'ドラグニティアームズ－ミスティル', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティアームズ－ミスティル.jpg'}
+    ,{type: 'ef', name: 'ドラグニティ－クーゼ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティ－クーゼ.jpg'}
+    ,{type: 'ef', name: 'ドラグニティ－レギオン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティ－レギオン.jpg'}
+    ,{type: 'sy', name: 'ドラグニティナイト－アスカロン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティナイト－アスカロン.jpg'}
+    ,{type: 'sy', name: 'ドラグニティナイト－バルーチャ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティナイト－バルーチャ.jpg'}
+    ,{type: 'ef', name: 'ドラグニティ－セナート', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティ－セナート.jpg'}
+    ,{type: 'ef', name: 'ドラグニティ－ギザーム', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティ－ギザーム.jpg'}
+    ,{type: 'ef', name: 'ドラグニティアームズ－グラム', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティアームズ－グラム.jpg'}
+    ,{type: 'sy', name: 'ドラグニティナイト－ゴルムファバル', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティナイト－ゴルムファバル.jpg'}
+    ,{type: 'ef', name: 'ドラグニティ－アキュリス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティ－アキュリス.jpg'}
+    ,{type: 'tr', name: 'ドラグニティ・ヴォイド', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティ・ヴォイド.jpg'}
+    ,{type: 'ef', name: 'ドラグニティ－ブラックスピア', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティ－ブラックスピア.jpg'}
+    ,{type: 'ef', name: 'ドラグニティ－ブランディストック', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティ－ブランディストック.jpg'}
+    ,{type: 'sp', name: 'ドラグニティ・ドラフト', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティ・ドラフト.jpg'}
+    ,{type: 'sy', name: 'ドラグニティナイト－ゲイボルグ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティナイト－ゲイボルグ.jpg'}
+    ,{type: 'ef', name: 'ドラグニティ－コルセスカ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティ－コルセスカ.jpg'}
+    ,{type: 'sy', name: 'ドラグニティナイト－トライデント', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/dragnity/ドラグニティナイト－トライデント.jpg'}
+  ]
+);
+//ヴァレット
+createThemeCards(
+  'bullet',
+  'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレット・トレーサー.jpg',
+  [
+    {type: 'ef', name: 'アネスヴァレット・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/アネスヴァレット・ドラゴン.jpg'}
+    ,{type: 'ef', name: 'アブソルーター・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/アブソルーター・ドラゴン.jpg'}
+    ,{type: 'ef', name: 'エクスプロードヴァレット・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/エクスプロードヴァレット・ドラゴン.jpg'}
+    ,{type: 'ef', name: 'オートヴァレット・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/オートヴァレット・ドラゴン.jpg'}
+    ,{type: 'ef', name: 'シェルヴァレット・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/シェルヴァレット・ドラゴン.jpg'}
+    ,{type: 'ef', name: 'シルバーヴァレット・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/シルバーヴァレット・ドラゴン.jpg'}
+    ,{type: 'ef', name: 'スピードローダー・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/スピードローダー・ドラゴン.jpg'}
+    ,{type: 'ef', name: 'デュアルウィール・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/デュアルウィール・ドラゴン.jpg'}
+    ,{type: 'ef', name: 'マグナヴァレット・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/マグナヴァレット・ドラゴン.jpg'}
+    ,{type: 'ef', name: 'メタルヴァレット・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/メタルヴァレット・ドラゴン.jpg'}
+    ,{type: 'ef', name: 'ヴァレット・キャリバー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレット・キャリバー.jpg'}
+    ,{type: 'ef', name: 'ヴァレット・コーダー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレット・コーダー.jpg'}
+    ,{type: 'ef', name: 'ヴァレット・シンクロン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレット・シンクロン.jpg'}
+    ,{type: 'ef', name: 'ヴァレット・トレーサー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレット・トレーサー.jpg'}
+    ,{type: 'ef', name: 'ヴァレット・リチャージャー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレット・リチャージャー.jpg'}
+    ,{type: 'fu', name: 'ヴァレルロード・Ｆ・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレルロード・Ｆ・ドラゴン.jpg'}
+    ,{type: 'ri', name: 'ヴァレルロード・Ｒ・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレルロード・Ｒ・ドラゴン.jpg'}
+    ,{type: 'sy', name: 'ヴァレルロード・Ｓ・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレルロード・Ｓ・ドラゴン.jpg'}
+    ,{type: 'xy', name: 'ヴァレルロード・Ｘ・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレルロード・Ｘ・ドラゴン.jpg'}
+    ,{type: 'li', name: 'ショートヴァレル・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ショートヴァレル・ドラゴン.jpg'}
+    ,{type: 'li', name: 'ストライカー・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ストライカー・ドラゴン.jpg'}
+    ,{type: 'li', name: 'ソーンヴァレル・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ソーンヴァレル・ドラゴン.jpg'}
+    ,{type: 'li', name: 'デリンジャラス・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/デリンジャラス・ドラゴン.jpg'}
+    ,{type: 'li', name: 'ブースター・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ブースター・ドラゴン.jpg'}
+    ,{type: 'li', name: 'リローダー・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/リローダー・ドラゴン.jpg'}
+    ,{type: 'li', name: 'ヴァレルエンド・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレルエンド・ドラゴン.jpg'}
+    ,{type: 'li', name: 'ヴァレルガード・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレルガード・ドラゴン.jpg'}
+    ,{type: 'li', name: 'ヴァレルコード・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレルコード・ドラゴン.jpg'}
+    ,{type: 'li', name: 'ヴァレルソード・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレルソード・ドラゴン.jpg'}
+    ,{type: 'li', name: 'ヴァレルロード・ドラゴン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレルロード・ドラゴン.jpg'}
+    ,{type: 'sp', name: 'ヴァレル・サプライヤー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレル・サプライヤー.jpg'}
+    ,{type: 'sp', name: 'ヴァレル・リロード', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレル・リロード.jpg'}
+    ,{type: 'sp', name: 'クイック・リボルブ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/クイック・リボルブ.jpg'}
+    ,{type: 'sp', name: 'スクイブ・ドロー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/スクイブ・ドロー.jpg'}
+    ,{type: 'sp', name: 'ベイオネット・パニッシャー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ベイオネット・パニッシャー.jpg'}
+    ,{type: 'sp', name: 'リボルブート・セクター', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/リボルブート・セクター.jpg'}
+    ,{type: 'sp', name: 'ヘヴィ・トリガー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヘヴィ・トリガー.jpg'}
+    ,{type: 'tr', name: 'タクティカル・エクスチェンバー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/タクティカル・エクスチェンバー.jpg'}
+    ,{type: 'tr', name: 'ヴァレル・レフリジェレーション', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ヴァレル・レフリジェレーション.jpg'}
+    ,{type: 'tr', name: 'ガンスリンガー・エクスキューション', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ガンスリンガー・エクスキューション.jpg'}
+    ,{type: 'tr', name: 'リンク・デス・ターレット', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/リンク・デス・ターレット.jpg'}
+    ,{type: 'tr', name: 'ミラーフォース', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ミラーフォース.jpg'}
+    ,{type: 'tr', name: 'ミラーフォースランチャー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/bullet/ミラーフォースランチャー.jpg'}
+  ]
+);
+//ドラゴンメイド
+createThemeCards(
+  'maid',
+  'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイド・チェイム.jpg',
+  [
+    {type: 'ef', name: 'ドラゴンメイド・エルデ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイド・エルデ.jpg'}
+    ,{type: 'ef', name: 'ドラゴンメイド・ナサリー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイド・ナサリー.jpg'}
+    ,{type: 'ef', name: 'ドラゴンメイド・フランメ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイド・フランメ.jpg'}
+    ,{type: 'ef', name: 'ドラゴンメイド・ティルル', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイド・ティルル.jpg'}
+    ,{type: 'ef', name: 'ドラゴンメイド・ルフト', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイド・ルフト.jpg'}
+    ,{type: 'ef', name: 'ドラゴンメイド・パルラ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイド・パルラ.jpg'}
+    ,{type: 'ef', name: 'ドラゴンメイド・シュテルン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイド・シュテルン.jpg'}
+    ,{type: 'ef', name: 'ドラゴンメイド・チェイム', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイド・チェイム.jpg'}
+    ,{type: 'ef', name: 'ドラゴンメイド・フルス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイド・フルス.jpg'}
+    ,{type: 'ef', name: 'ドラゴンメイド・ラドリー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイド・ラドリー.jpg'}
+    ,{type: 'fu', name: 'ドラゴンメイド・ラティス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイド・ラティス.jpg'}
+    ,{type: 'fu', name: 'ドラゴンメイド・シュトラール', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイド・シュトラール.jpg'}
+    ,{type: 'fu', name: 'ドラゴンメイド・ハスキー', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイド・ハスキー.jpg'}
+    ,{type: 'sp', name: 'ドラゴンメイドのお心づくし', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイドのお心づくし.jpg'}
+    ,{type: 'sp', name: 'ドラゴンメイドのお召し替え', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイドのお召し替え.jpg'}
+    ,{type: 'sp', name: 'ドラゴンメイドのお出迎え', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイドのお出迎え.jpg'}
+    ,{type: 'sp', name: 'ドラゴンメイドのお見送り', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイドのお見送り.jpg'}
+    ,{type: 'tr', name: 'ドラゴンメイドのお片付け', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイドのお片付け.jpg'}
+    ,{type: 'tr', name: 'ドラゴンメイド・リラクゼーション', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ドラゴンメイド・リラクゼーション.jpg'}
+    ,{type: 'sp', name: 'スウィートルームメイド', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/スウィートルームメイド.jpg'}
+    ,{type: 'tr', name: 'ラドリートラップ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/maid/ラドリートラップ.jpg'}
+  ]
+);
+//アルバスの烙印
+createThemeCards(
+  'albus',
+  'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/アルバスの落胤.jpg',
+  [
+    {type: 'sp', name: '白の烙印', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/白の烙印.jpg'}
+    ,{type: 'sp', name: '烙印喪失', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/烙印喪失.jpg'}
+    ,{type: 'sp', name: '烙印の絆', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/烙印の絆.jpg'}
+    ,{type: 'sp', name: '烙印融合', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/烙印融合.jpg'}
+    ,{type: 'sp', name: '赫の烙印', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/赫の烙印.jpg'}
+    ,{type: 'sp', name: '烙印開幕', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/烙印開幕.jpg'}
+    ,{type: 'sp', name: '烙印の気炎', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/烙印の気炎.jpg'}
+    ,{type: 'sp', name: '烙印の光', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/烙印の光.jpg'}
+    ,{type: 'sp', name: '失烙印', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/失烙印.jpg'}
+    ,{type: 'sp', name: '復烙印', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/復烙印.jpg'}
+    ,{type: 'sp', name: '烙印の使徒', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/烙印の使徒.jpg'}
+    ,{type: 'sp', name: '烙印の命数', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/烙印の命数.jpg'}
+    ,{type: 'sp', name: '烙印劇城デスピア', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/烙印劇城デスピア.jpg'}
+    ,{type: 'tr', name: '赫ける王の烙印', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/赫ける王の烙印.jpg'}
+    ,{type: 'tr', name: '烙印凶鳴', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/烙印凶鳴.jpg'}
+    ,{type: 'tr', name: '烙印追放', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/烙印追放.jpg'}
+    ,{type: 'tr', name: '烙印の裁き', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/烙印の裁き.jpg'}
+    ,{type: 'tr', name: '烙印の剣', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/烙印の剣.jpg'}
+    ,{type: 'tr', name: '分かつ烙印', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/分かつ烙印.jpg'}
+    ,{type: 'tr', name: '導かれし烙印', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/導かれし烙印.jpg'}
+    ,{type: 'tr', name: '烙印の即凶劇', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/烙印の即凶劇.jpg'}
+    ,{type: 'tr', name: '烙印の獣', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/烙印の獣.jpg'}
+    ,{type: 'tr', name: '烙印断罪', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/烙印断罪.jpg'}
+    ,{type: 'ef', name: 'デスピアの導化アルベル', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/デスピアの導化アルベル.jpg'}
+    ,{type: 'ef', name: '悲劇のデスピアン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/悲劇のデスピアン.jpg'}
+    ,{type: 'ef', name: '黒衣竜アルビオン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/黒衣竜アルビオン.jpg'}
+    ,{type: 'to', name: '凶導者アルベル', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/凶導者アルベル.jpg'}
+    ,{type: 'ef', name: '赫の聖女カルテシア', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/赫の聖女カルテシア.jpg'}
+    ,{type: 'ef', name: '灰燼のアルバス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/灰燼のアルバス.jpg'}
+    ,{type: 'ef', name: '鉄獣鳥メルクーリエ', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/鉄獣鳥メルクーリエ.jpg'}
+    ,{type: 'ef', name: '導きの聖女クエム', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/導きの聖女クエム.jpg'}
+    ,{type: 'fu', name: '白の枢機竜', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/白の枢機竜.jpg'}
+    ,{type: 'fu', name: '灰燼竜バスタード', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/灰燼竜バスタード.jpg'}
+    ,{type: 'fu', name: '撃鉄竜リンドブルム', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/撃鉄竜リンドブルム.jpg'}
+    ,{type: 'fu', name: '痕喰竜ブリガンド', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/痕喰竜ブリガンド.jpg'}
+    ,{type: 'fu', name: '深淵竜アルバ・レナトゥス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/深淵竜アルバ・レナトゥス.jpg'}
+    ,{type: 'fu', name: '真炎竜アルビオン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/真炎竜アルビオン.jpg'}
+    ,{type: 'fu', name: '神炎竜ルベリオン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/神炎竜ルベリオン.jpg'}
+    ,{type: 'fu', name: '鉄駆竜スプリンド', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/鉄駆竜スプリンド.jpg'}
+    ,{type: 'fu', name: 'デスピアン・クエリティス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/デスピアン・クエリティス.jpg'}
+    ,{type: 'fu', name: '氷剣竜ミラジェイド', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/氷剣竜ミラジェイド.jpg'}
+    ,{type: 'fu', name: '烙印竜アルビオン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/烙印竜アルビオン.jpg'}
+    ,{type: 'sp', name: '開かれし大地', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/開かれし大地.jpg'}
+    ,{type: 'ef', name: 'アルバスの落胤', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/albus/アルバスの落胤.jpg'}
+  ]
+);
+//ビーステッド
+createThemeCards(
+  'beasted',
+  'https://mirayugioh.github.io/yugiohSolitaireTool/card/beasted/深淵の獣ルベリオン.jpg',
+  [
+    {type: 'ef', name: '深淵の獣アルベル', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/beasted/深淵の獣アルベル.jpg'}
+    ,{type: 'ef', name: '深淵の獣サロニール', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/beasted/深淵の獣サロニール.jpg'}
+    ,{type: 'ef', name: '深淵の獣ドルイドヴルム', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/beasted/深淵の獣ドルイドヴルム.jpg'}
+    ,{type: 'ef', name: '深淵の獣バルドレイク', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/beasted/深淵の獣バルドレイク.jpg'}
+    ,{type: 'ef', name: '深淵の獣マグナムート', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/beasted/深淵の獣マグナムート.jpg'}
+    ,{type: 'ef', name: '深淵の獣ルベリオン', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/beasted/深淵の獣ルベリオン.jpg'}
+    ,{type: 'ef', name: '深淵の獣アルバ・ロス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/beasted/深淵の獣アルバ・ロス.jpg'}
+    ,{type: 'sy', name: '深淵の神獣ディス・パテル', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/beasted/深淵の神獣ディス・パテル.jpg'}
+    ,{type: 'ef', name: '深淵の相剣龍', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/beasted/深淵の相剣龍.jpg'}
+    ,{type: 'fu', name: '深淵竜アルバ・レナトゥス', url: 'https://mirayugioh.github.io/yugiohSolitaireTool/card/beasted/深淵竜アルバ・レナトゥス.jpg'}
+  ]
+);
 //Google検索APIでカードを生成する
 const inputTextBox = document.getElementById('inputTextBox');
 const searchButton = document.getElementById('searchButton');
@@ -3144,14 +3529,14 @@ async function playSound(url) {
   }
 }
 //iframeのやつ
-// const iframeBoard = document.getElementById('iframeBoard');
-// const iframeElement = document.getElementById('iframeElement');
-// const displayIframe = (cardName) => {
-//   const encodedCardName = encodeURIComponent(cardName);
-//   //console.log(`${cardName}が${encodedCardName}にエンコードされました。`);
-//   //const iframeUrl = //わからなくなったので没
-//   iframeElement.src = iframeUrl;
-// }
+const iframeBoard = document.getElementById('iframeBoard');
+const iframeElement = document.getElementById('iframeElement');
+const displayIframe = (cardName) => {
+  const encodedCardName = encodeURIComponent(cardName);
+  //console.log(`${cardName}が${encodedCardName}にエンコードされました。`);
+  //const iframeUrl = //わからなくなったので没
+  iframeElement.src = iframeUrl;
+}
 </script>
 
 </body>
